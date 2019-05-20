@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 11:23:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/20 13:54:05 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/20 15:11:04 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <unistd.h>
 # include <string.h>
 
-int		ft_strlen(char *str);
+size_t	strlen(const char *s);
 
 #endif
