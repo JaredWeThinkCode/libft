@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 11:23:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/20 13:54:05 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/20 12:42:34 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/20 13:52:56 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __LIBFT_H
-# define __LIBFT_H
+#include "../incl/libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
+char	*ft_strdup(char *str)
+{
+	char *a;
+	char *b;
+	char *c;
 
-int		ft_strlen(char *str);
-
-#endif
+	a = malloc(ft_strlen(str) + 1);
+	b = str;
+	c = a;
+	while (*b != 0)
+	{
+		*c = *b;
+		c++;
+		b++;
+	}
+	*c = '\0';
+	return (c);
+}
