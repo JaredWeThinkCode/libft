@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 11:30:10 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/21 08:06:55 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/21 09:36:39 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/21 10:27:14 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_atoi(const char *str)
 {
-	size_t a;
+	int a;
+	int b;
+	int c;
 
 	a = 0;
-	while (s[a] != '\0')
+	b = 0;
+	c = 1;
+	if (str[a] == '-')
 	{
+		c = -1;
 		a++;
 	}
-	return (a);
+	while (str[a] != '\0')
+	{
+		b = b * 10 + str[a] - '0';
+		a++;
+	}
+	return (c * b);
 }
