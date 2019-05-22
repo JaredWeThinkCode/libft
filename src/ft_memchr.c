@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:57:34 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/21 15:37:24 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/22 08:36:44 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,19 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t a;
-	char *b;
+	size_t	a;
+	char	*r;
 
 	a = 0;
-	b = (char *)s;
+	r = (char *)s;
+	while (a < n)
+	{
+		if (*r == c)
+		{
+			return (r);
+		}
+		r++;
+		a++;
+	}
+	return (NULL);
 }

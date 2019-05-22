@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:51:59 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/22 08:17:32 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/22 10:00:01 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/22 10:04:10 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
 	size_t	a;
-	char	*b;
-	char	*c;
+	size_t	b;
 
-	a = 0;
-	b = (char *)dst;
-	c = (char *)src;
-	while (a < len)
+	a = ft_strlen(s1);
+	b = 0;
+	while (b < ft_strlen(s2))
 	{
-		b[a] = c[a];
+		s1[a] = s2[b];
+		b++;
 		a++;
 	}
-	return (dst);
+	s1[a] = '\0';
+	return (s1);
 }

@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:38:58 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/21 14:48:51 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/22 08:16:07 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 		b[a] = d[a];
 		if (d[a] == c)
 		{
-			break;
+			break ;
 		}
 		a++;
 	}

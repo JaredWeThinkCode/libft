@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:51:59 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/22 08:17:32 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/22 13:29:07 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/22 14:06:53 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	a;
-	char	*b;
-	char	*c;
+	size_t	b;
+	size_t	c;
+	char	*res;
 
 	a = 0;
-	b = (char *)dst;
-	c = (char *)src;
-	while (a < len)
+	b = 0;
+	c = 0;
+	res = (char *)haystack;
+	if (ft_strlen(needle) == 0)
+		return (res);
+	while (a <= (ft_strlen(haystack) - ft_strlen(needle)) && a < len)
 	{
-		b[a] = c[a];
+		while (b < len)
+		{
+			if (c >= len)
+				break ;
+			if (haystack[a + b] != needle[b])
+				break ;
+			b++;
+			c++;
+		}
+		if (b == ft_strlen(needle))
+			return (&res[a]);
 		a++;
+		c++;
 	}
-	return (dst);
+	return (NULL);
 }
