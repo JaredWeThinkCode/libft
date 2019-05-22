@@ -1,15 +1,16 @@
-NAME = libft.a
+NAME = "libft.a"
 
-SRC = ./src/*.c
-OBJ = ./*.o
-HEAD = ./incl
-TEST = -Wall -Werror -Wextra
+SRC = *.c
+OBJ = *.o
+
+INCL = libft.h
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(TEST) $(SRC)
-	ar rc $(NAME) $(OBJ)
+	gcc -c -Wall -Werror -Wextra $(SRC)
+	ar rv $(NAME) $(OBJ) $(INCL)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
