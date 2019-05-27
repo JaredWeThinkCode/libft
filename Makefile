@@ -11,6 +11,7 @@ $(NAME):
 	gcc -c -Wall -Werror -Wextra $(SRC)
 	ar rv $(NAME) $(OBJ) $(INCL)
 	ranlib $(NAME)
+	norminette
 
 clean:
 	rm -f $(OBJ)

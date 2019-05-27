@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 11:55:16 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 15:10:49 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/27 14:35:17 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/27 14:45:06 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+int		ft_nbrlen(int nbr)
 {
-	char	*a;
-	int		b;
+	int		a;
 
-	b = ft_nbrlen(n);
-	if (n < 0)
+	a = 0;
+	if (nbr == 0)
 	{
-		n = -n;
-		b++;
-		a = ft_memalloc(b + 1);
-		a[0] = '-';
+		a = 1;
+		return (a);
 	}
-	else
-		a = ft_memalloc(b + 1);
-	a[b] = '\0';
-	while (n)
+	while (nbr)
 	{
-		a[b - 1] = n % 10 + '0';
-		n = n / 10;
-		b--;
+		nbr = nbr / 10;
+		a++;
 	}
 	return (a);
 }
