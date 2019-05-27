@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 10:29:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 11:52:36 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/27 10:08:10 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/27 10:11:45 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	ft_putendl(char const *s)
 {
-	int	a;
-
-	a = 0;
-	while (s1[a] != '\0' && s2[a] != '\0' && s1[a] == s2[a])
-	{
-		a++;
-	}
-	return (s1[a] - s2[a]);
+	ft_putstr(s);
+	ft_putchar('\n');
 }

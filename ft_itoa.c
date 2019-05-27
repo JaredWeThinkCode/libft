@@ -1,25 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 10:29:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 11:52:36 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/27 11:55:16 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/27 13:10:14 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_nbrlen(int nbr)
 {
 	int	a;
 
 	a = 0;
-	while (s1[a] != '\0' && s2[a] != '\0' && s1[a] == s2[a])
+	if (nbr == 0)
+		a = 1;
+	if (nbr < 0)
 	{
+		nbr = nbr * -1;
 		a++;
 	}
-	return (s1[a] - s2[a]);
+	while (nbr > 0)
+	{
+		nbr = nbr / 10;
+		a++;
+	}
+	return (a);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*a;
+	int		b;
+
+	b = ft_nbrlen(n);
+	a = ft_memalloc(b + 1);
+	if (n < 0)
+	{
+		a[0] = '-';
+	}
+	a[b] = '\0';
+	while (n > 0)
+	{
+		a[b - 1] = n % 10 + '0';
+		n = n / 10;
+		b--;
+	}
+	return (a);
 }
