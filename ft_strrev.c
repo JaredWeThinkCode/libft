@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 08:43:53 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/28 13:19:00 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/28 11:28:29 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/28 11:30:39 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strrev(char *s)
 {
-	size_t	a;
-	char	*b;
-	char	*c;
+	char	*a;
+	size_t	b;
+	size_t	c;
 
-	a = 0;
-	b = (char *)s1;
-	c = (char *)s2;
-	while (a < n)
+	b = ft_strlen(s);
+	a = ft_memalloc(b + 1);
+	c = 0;
+	while (c < ft_strlen(s))
 	{
-		if (b[a] > c[a] || b[a] < c[a])
-		{
-			return ((unsigned char)b[a] - (unsigned char)c[a]);
-		}
-		a++;
+		a[c] = s[b - 1];
+		b--;
+		c++;
 	}
-	return (0);
+	a[c] = '\0';
+	return (a);
 }

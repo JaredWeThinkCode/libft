@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:29:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 11:52:36 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/28 13:00:22 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 	{
 		a++;
 	}
-	return (s1[a] - s2[a]);
+	return ((unsigned char)s1[a] - (unsigned char)s2[a]);
 }

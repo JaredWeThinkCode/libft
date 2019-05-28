@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 08:43:53 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/28 13:19:00 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/28 08:13:02 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/28 08:34:12 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	a;
-	char	*b;
-	char	*c;
+	char	*a;
+	size_t	b;
+	size_t	c;
+	size_t	d;
 
-	a = 0;
-	b = (char *)s1;
-	c = (char *)s2;
-	while (a < n)
+	if (!s1 || !s2)
+		return (NULL);
+	b = ft_strlen(s1) + ft_strlen(s2);
+	c = 0;
+	d = 0;
+	a = ft_memalloc(b + 1);
+	while (c < ft_strlen(s1))
 	{
-		if (b[a] > c[a] || b[a] < c[a])
-		{
-			return ((unsigned char)b[a] - (unsigned char)c[a]);
-		}
-		a++;
+		a[c] = s1[c];
+		c++;
 	}
-	return (0);
+	while (d < ft_strlen(s2))
+	{
+		a[c] = s2[d];
+		c++;
+		d++;
+	}
+	a[b + 1] = '\0';
+	return (a);
 }
