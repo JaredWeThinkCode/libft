@@ -5,10 +5,12 @@ OBJ = *.o
 
 INCL = libft.h
 
+TEST = -Wall -Werror -Wextra
+
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Werror -Wextra $(SRC)
+	gcc -c $(TEST) $(SRC)
 	ar rv $(NAME) $(OBJ) $(INCL)
 	ranlib $(NAME)
 	norminette
