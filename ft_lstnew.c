@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 11:55:16 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/31 14:54:44 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/31 16:08:20 by jnaidoo           #+#    #+#             */
+/*   Updated: 2019/05/31 16:15:43 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char			*a;
-	unsigned int	b;
-	long int		c;
+	t_list	*a;
 
-	b = ft_nbrlen(n);
-	c = n;
-	if (n < 0)
-		c = c * -1;
-	if (!(a = ft_strnew(b)))
+	if (!(a = ft_memalloc(sizeof(t_list))))
 		return (NULL);
-	a[b] = '\0';
-	b--;
-	while (c >= 10)
+	if (content == NULL)
 	{
-		a[b] = (c % 10) + '0';
-		c = c / 10;
-		b--;
+		a->content = NULL;
+		a->content_size = 0;
 	}
-	a[b] = c + '0';
-	b--;
-	if (n < 0)
-		a[0] = '-';
+	else
+	{
+		if (!(a->content = ft_strdup(content)))
+			return (NULL);
+		a->content_size = content_size
+	}
+	a->next = NULL;
 	return (a);
 }

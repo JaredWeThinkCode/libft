@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 13:02:45 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/31 12:24:37 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 16:02:53 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,21 @@ static size_t	ft_istrim(char const *s)
 	return (a);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char	*a;
 	size_t	b;
 	size_t	d;
 
-	b = ft_istrim((char *)s);
-	d = ft_strlen((char *)s) - b - ft_istrim(ft_strrev((char *)s));
-	if (b == ft_strlen(s))
-		return ("");
-	if (!(a = ft_memalloc(d + 1)))
-		return (NULL);
-	ft_strncpy(a, &s[b], d);
-	return (a);
+	if (s != NULL)
+	{
+		b = ft_istrim((char *)s);
+		if (b == ft_strlen((char *)s))
+			return ("");
+		d = ft_strlen((char *)s) - b - ft_istrim(ft_strrev((char *)s));
+		a = ft_strnew(d);
+		ft_strncpy(a, &s[b], d);
+		return (a);
+	}
+	return (NULL);
 }

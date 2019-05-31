@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 10:06:09 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/31 12:41:43 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 14:52:42 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	b = ft_cntwrd(s, c);
-	if(!(a = (char **)ft_memalloc(sizeof(char *) * (b + 1))))
+	if (!(a = (char **)ft_memalloc(sizeof(char *) * (b + 1))))
 		return (NULL);
 	d = 0;
 	e = 0;
