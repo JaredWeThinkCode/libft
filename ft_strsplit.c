@@ -6,13 +6,13 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 10:06:09 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/30 12:32:07 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 12:41:43 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_cntwrd(char const *s, char c)
+static int	ft_cntwrd(char const *s, char c)
 {
 	int		a;
 	int		b;
@@ -30,7 +30,7 @@ int		ft_cntwrd(char const *s, char c)
 	return (b);
 }
 
-int		ft_cntwrdlen(char const *s, int start, char c)
+static int	ft_cntwrdlen(char const *s, int start, char c)
 {
 	int		a;
 
@@ -45,19 +45,20 @@ int		ft_cntwrdlen(char const *s, int start, char c)
 	return (a);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**a;
 	int		b;
 	int		d;
 	int		e;
 
+	if (s == NULL)
+		return (NULL);
 	b = ft_cntwrd(s, c);
-	a = (char **)ft_memalloc(sizeof(char *) * (b + 1));
+	if(!(a = (char **)ft_memalloc(sizeof(char *) * (b + 1))))
+		return (NULL);
 	d = 0;
 	e = 0;
-	if (!s || !a)
-		return (NULL);
 	while (d < b)
 	{
 		while (s[e] == c && s[e] != '\0')

@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 10:04:27 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 10:05:36 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 13:07:43 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void	ft_putstr(char const *s)
 {
 	int	a;
 
-	a = 0;
-	while (s[a] != '\0')
+	if (s != NULL)
 	{
-		ft_putchar(s[a]);
-		a++;
+		a = 0;
+		while (s[a] != '\0')
+		{
+			ft_putchar(s[a]);
+			a++;
+		}
 	}
 }

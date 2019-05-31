@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 07:56:02 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/28 08:01:31 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 12:36:30 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ char	*ft_strmap(char	const *s, char (*f)(char))
 	size_t	b;
 	size_t	c;
 
+	if (s == NULL)
+		return (NULL);
 	b = ft_strlen(s);
-	a = ft_memalloc(b + 1);
+	if (!(a = ft_memalloc(b + 1)))
+		return (NULL);
 	c = 0;
 	while (c < b)
 	{

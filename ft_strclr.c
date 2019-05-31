@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 10:26:49 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/24 10:39:43 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/30 14:42:03 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_strclr(char *s)
 {
-	ft_memset((void *)s, '\0', ft_strlen(s));
+	if (s != NULL)
+	{
+		ft_memset((void *)s, '\0', ft_strlen(s));
+	}
 }

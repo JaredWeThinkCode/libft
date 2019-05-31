@@ -6,26 +6,27 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:35:17 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/27 14:45:06 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 10:54:39 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(int nbr)
+int		ft_nbrlen(long int nbr)
 {
-	int		a;
+	unsigned int		a;
 
 	a = 0;
-	if (nbr == 0)
+	if (nbr < 0)
 	{
-		a = 1;
-		return (a);
+		nbr = nbr * -1;
+		a++;
 	}
-	while (nbr)
+	while (nbr >= 10)
 	{
 		nbr = nbr / 10;
 		a++;
 	}
+	a++;
 	return (a);
 }

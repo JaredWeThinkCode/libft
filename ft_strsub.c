@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 12:26:30 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/24 12:32:10 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 12:40:15 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	c;
 	char	*b;
 
+	if (s == NULL)
+		return (NULL);
 	a = start;
 	c = 0;
-	b = ft_memalloc(len + 1);
+	if (!(b = ft_memalloc(len + 1)))
+		return (NULL);
 	if (a > ft_strlen(s) || a + len > ft_strlen(s))
 	{
 		return (0);

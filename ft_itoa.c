@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:55:16 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/05/30 09:15:32 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/05/31 10:56:13 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 char	*ft_itoa(int n)
 {
-	char	*a;
-	int		b;
+	char		*a;
+	unsigned int	b;
+	long int	c;
 
 	b = ft_nbrlen(n);
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
+	c = n;
 	if (n < 0)
-	{
-		n = -n;
-		b++;
-		a = ft_memalloc(b + 1);
-		a[0] = '-';
-	}
-	else
-		a = ft_memalloc(b + 1);
+		c = c * -1;
+	if (!(a = ft_strnew(b)))
+		return (NULL);
 	a[b] = '\0';
-	while (n)
+	b--;
+	while (c >= 10)
 	{
-		a[b - 1] = n % 10 + '0';
-		n = n / 10;
+		a[b] = (c % 10) + '0';
+		c = c / 10;
 		b--;
 	}
+	a[b] = c + '0';
+	b--;
+	if (n < 0)
+		a[0] = '-';
 	return (a);
 }

@@ -13,6 +13,8 @@ $(NAME):
 	gcc -c $(TEST) $(SRC)
 	ar rv $(NAME) $(OBJ) $(INCL)
 	ranlib $(NAME)
+
+norm:
 	norminette
 
 clean:
