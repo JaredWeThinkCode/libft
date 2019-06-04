@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rhutchin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 16:08:20 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/06/04 15:21:00 by jnaidoo          ###   ########.fr       */
+/*   Created: 2019/05/27 15:34:51 by rhutchin          #+#    #+#             */
+/*   Updated: 2019/06/04 15:13:43 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem))
 {
-	t_list	*a;
+	t_list *a;
+	t_list *b;
 
-	if (!(a = ft_memalloc(sizeof(t_list))))
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (content == NULL)
+	b = f(lst);
+	a = b;
+	while (lst->next != NULL)
 	{
-		a->content = NULL;
-		a->content_size = 0;
+		b->next = f(lst->next);
+		b = b->next;
+		lst = lst->next;
 	}
-	else
-	{
-		if (!(a->content = ft_strdup(content)))
-			return (NULL);
-		a->content_size = content_size;
-	}
-	a->next = NULL;
 	return (a);
 }

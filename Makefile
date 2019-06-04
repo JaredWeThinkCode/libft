@@ -6,7 +6,7 @@
 #    By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 15:13:34 by jnaidoo           #+#    #+#              #
-#    Updated: 2019/05/31 15:17:00 by jnaidoo          ###   ########.fr        #
+#    Updated: 2019/06/04 15:34:47 by jnaidoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = ft_memccpy.c ft_putnbr.c ft_striter.c ft_strnstr.c ft_memchr.c \
 	  ft_strncat.c ft_tolower.c ft_isdigit.c ft_putchar.c \
 	  ft_strcpy.c ft_strncmp.c ft_toupper.c ft_isprint.c ft_putchar_fd.c \
 	  ft_strdel.c ft_strncpy.c ft_itoa.c ft_putendl.c ft_strdup.c \
-	  ft_strnequ.c ft_memalloc.c ft_putendl_fd.c ft_strequ.c ft_strnew.c
+	  ft_strnequ.c ft_memalloc.c ft_putendl_fd.c ft_strequ.c ft_strnew.c \
+	  ft_lstnew.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c
 
 OBJ = ft_memccpy.o ft_putnbr.o ft_striter.o ft_strnstr.o ft_memchr.o \
 	  ft_putnbr_fd.o ft_striteri.o ft_strrchr.o ft_memcmp.o \
@@ -34,7 +35,8 @@ OBJ = ft_memccpy.o ft_putnbr.o ft_striter.o ft_strnstr.o ft_memchr.o \
 	  ft_strncat.o ft_tolower.o ft_isdigit.o ft_putchar.o \
 	  ft_strcpy.o ft_strncmp.o ft_toupper.o ft_isprint.o ft_putchar_fd.o \
 	  ft_strdel.o ft_strncpy.o ft_itoa.o ft_putendl.o ft_strdup.o \
-	  ft_strnequ.o ft_memalloc.o ft_putendl_fd.o ft_strequ.o ft_strnew.o
+	  ft_strnequ.o ft_memalloc.o ft_putendl_fd.o ft_strequ.o ft_strnew.o \
+	  ft_lstnew.o ft_lstadd.o ft_lstdel.o ft_lstdelone.o ft_lstiter.o ft_lstmap.o
 
 INCL = libft.h
 
