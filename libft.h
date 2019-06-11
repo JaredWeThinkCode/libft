@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 11:23:56 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/06/04 15:24:26 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/06/11 12:28:43 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, int i);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
@@ -78,8 +79,14 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
 int					ft_nbrlen(long int nbr);
+int					ft_islower(int c);
+int					ft_isupper(int c);
+int					ft_isspace(int c);
 char				*ft_strrev(char *s);
+char				*ft_capitalize(char	*s1);
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
