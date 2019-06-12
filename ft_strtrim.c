@@ -6,7 +6,7 @@
 /*   By: jnaidoo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 13:02:45 by jnaidoo           #+#    #+#             */
-/*   Updated: 2019/06/11 15:34:36 by jnaidoo          ###   ########.fr       */
+/*   Updated: 2019/06/12 14:20:36 by jnaidoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ char			*ft_strtrim(char const *s)
 		b = ft_istrim(s);
 		if (b == ft_strlen((char *)s))
 			return (ft_strnew(1));
-		d = ft_strlen((char *)s) - b - ft_istrim(ft_strrev((char *)s));
-		if (!(a = ft_memalloc(d + 1)))
+		if (!(a = ft_strrev((char *)s)))
 			return (NULL);
-		a = ft_strsub(s, b, d);
+		d = ft_strlen((char *)s) - b - ft_istrim(a);
+		if (!(a = ft_strsub(s, b, d)))
+			return (NULL);
 		return (a);
 	}
 	return (NULL);
